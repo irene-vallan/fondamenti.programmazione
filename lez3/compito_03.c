@@ -26,9 +26,8 @@ int main() {
   float h = x, k = y;
   printf("La divisione è: %.2f : %.2f = %.2f\n", h, k, div(h, k));
 
-  printf("Esempio di calcolo complesso: (((%.2f + %.2f) * %.2f) - %.2f) / "
-         "%.2f = %.2f",
-         h, k, h, k, h, div(sott(molt(somma(h, k), h), k), h));
+  printf("Esempio di calcolo complesso: (((%.2f + %.2f) * %.2f) - %.2f) / %.2f = %.2f", 
+        h, k, h, k, h, div(sott(molt(somma(h, k), h), k), h));
 
   printf("\n\nGrazie per aver usato il nostro programma!\n\n");
 
