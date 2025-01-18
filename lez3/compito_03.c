@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define nome "Irene"
-#define cognome "Vallan"
+#define nome printf("Irene Vallan");
 #define somma(x, y) x + y
 #define sott(x, y) x - y
 #define molt(x, y) x *y
@@ -10,7 +9,7 @@
 #define modulo(x, y) x % y
 
 int main() {
-  printf("Buongiorno, sono %s %s.\n\n", nome, cognome);
+  nome
 
   printf("Inserire il primo numero:\t");
   int x;
@@ -25,10 +24,10 @@ int main() {
   printf("Il modulo è: %d %% %d = %d\n", x, y, modulo(x, y));
 
   float h = x, k = y;
-  printf("La divisione è: %6.2f : %6.2f = %6.2f\n", h, k, div(h, k));
+  printf("La divisione è: %.2f : %.2f = %.2f\n", h, k, div(h, k));
 
-  printf("Esempio di calcolo complesso: (((%6.2f + %6.2f) * %6.2f) - %6.2f) / "
-         "%6.2f = %6.2f",
+  printf("Esempio di calcolo complesso: (((%.2f + %.2f) * %.2f) - %.2f) / "
+         "%.2f = %.2f",
          h, k, h, k, h, div(sott(molt(somma(h, k), h), k), h));
 
   printf("\n\nGrazie per aver usato il nostro programma!\n\n");
