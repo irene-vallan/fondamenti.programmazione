@@ -1,53 +1,62 @@
+// library for the standard input/output
 #include <stdio.h>
+
+//librayr for strings
 #include <string.h>
 
-#define nome printf("Irene Vallan\n\n"); //definition of a macro for the name
+//macro that prints name and surname
+#define name printf("Irene Vallan\n\n"); 
 
-#define PERC_R1 85*peso/100  //definition of a macro for the percentages
-#define PERC_R2 75*peso/100
-#define PERC_R3 65*peso/100
-#define PERC_R4 50*peso/100
-#define PERC_R5 40*peso/100
+//contants for the recycle percentages
+#define R1 85*weight/100  
+#define R2 75*weight/100
+#define R3 65*weight/100
+#define R4 50*weight/100
+#define R5 40*weight/100
 
 int main() {
-	nome
+	//using the macro to print the name
+	name
 	
+	//the user inserts the category
 	printf("Inserire la categoria RAEE: R");
-	int categoria;
-	scanf("%d", &categoria);
+	char category[8];
+	//int category;
+	scanf("%s", category);
 
+    // the user inserts the weight
 	printf("Inserire il peso (kg): ");
-	double peso;
-	scanf("%lf", &peso);
+	double weight;
+	scanf("%lf", &weight);
 
-	if (categoria == 1) {
-		printf("\nPeso totale: %.2lf", peso);
-		printf("\nRecuperabile: %.2lf", PERC_R1);
-		printf("\nIrrecuperabile: %.2lf", peso - PERC_R1);
+	if (category == 1) {
+		printf("\nPeso totale: %.2lf", weight);
+		printf("\nRecuperabile: %.2lf", R1);
+		printf("\nIrrecuperabile: %.2lf", weight - R1);
 	}
 
-	else if (categoria == 2) {
-		printf("\nPeso totale: %.2lf", peso);
-		printf("\nRecuperabile: %.2lf", PERC_R2);
-		printf("\nIrrecuperabile: %.2lf", peso - PERC_R2);
+	else if (category == 2) {
+		printf("\nPeso totale: %.2lf", weight);
+		printf("\nRecuperabile: %.2lf", R2);
+		printf("\nIrrecuperabile: %.2lf", weight - R2);
 	}
 
-	else if (categoria == 3) {
-		printf("\nPeso totale: %.2lf", peso);
-		printf("\nRecuperabile: %.2lf", PERC_R3);
-		printf("\nIrrecuperabile: %.2lf", peso - PERC_R3);
+	else if (category == 3) {
+		printf("\nPeso totale: %.2lf", weight);
+		printf("\nRecuperabile: %.2lf", R3);
+		printf("\nIrrecuperabile: %.2lf", weight - R3);
 	}
 
-	else if (categoria == 4) {
-		printf("\nPeso totale: %.2lf", peso);
-		printf("\nRecuperabile: %.2lf", PERC_R4);
-		printf("\nIrrecuperabile: %.2lf", peso - PERC_R4);
+	else if (category == 4) {
+		printf("\nPeso totale: %.2lf", weight);
+		printf("\nRecuperabile: %.2lf", R4);
+		printf("\nIrrecuperabile: %.2lf", weight - R4);
 	}
 
-	else if (categoria == 5) {
-		printf("\nPeso totale: %.2lf", peso);
-		printf("\nRecuperabile: %.2lf", PERC_R5);
-		printf("\nIrrecuperabile: %.2lf", peso - PERC_R5);
+	else if (category == 5) {
+		printf("\nPeso totale: %.2lf", weight);
+		printf("\nRecuperabile: %.2lf", R5);
+		printf("\nIrrecuperabile: %.2lf", weight - R5);
 	}
 
 	else { printf("ERRORE"); };
