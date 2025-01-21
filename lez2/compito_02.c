@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#define nome printf("Irene Vallan\n\n"); //definizione macro nome cognome
+#define nome printf("Irene Vallan\n\n"); //definition of a macro for the name
 
-#define PERC_R1 85*peso/100  //definizioni macro percentuali di recupero
+#define PERC_R1 85*peso/100  //definition of a macro for the percentages
 #define PERC_R2 75*peso/100
 #define PERC_R3 65*peso/100
 #define PERC_R4 50*peso/100
