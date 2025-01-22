@@ -60,12 +60,10 @@ int main() {
 		printf("\nPeso totale: %.2lf", weight);
 		printf("\nRecuperabile: %.2lf", R5);
 		printf("\nIrrecuperabile: %.2lf", weight - R5);
-	}
-    //printing "ERROR" if the category inserted by the user is not right
-	else { printf("ERRORE: inserire un'altra categoria"); };
+	};
 
     //printing a goodbye message
-	printf("\n\nGrazie per aver usato il nostro programma!\n");
+	printf("\n\nGrazie per aver usato il nostro programma!\n\n");
 
     //indication that the program is terminated successfully
 	return 0;
