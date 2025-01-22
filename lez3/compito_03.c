@@ -6,8 +6,8 @@ Moltiplicazione
 Divisione
 Modulo
 L'utente inserirà due numeri interi e il programma mostrerà il risultato di ogni operazione utilizzando le macro definite.
-Il programma mostrerà anche un calcolo complesso in cui sono utilizzate insieme tutte le macro definite in un unico calcolo
-provare ad inserire le macro in un file .h diverso dal file principale .c*/
+Il programma mostrerà anche un calcolo complesso in cui sono utilizzate insieme tutte le macro definite in un unico calcolo.
+Provare ad inserire le macro in un file .h diverso dal file principale .c*/
 
 //including library for standarn input/output
 #include <stdio.h>
