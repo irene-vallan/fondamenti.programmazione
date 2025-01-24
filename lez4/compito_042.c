@@ -1,4 +1,4 @@
-/*Gestisca le spese mensili per elettricità, acqua, gas e internet.
+/*Gestisca le spese mensili per elettricità, water, gas e internet.
 Usi una macro per calcolare una penale del 10% per ritardi nei pagamenti.
 Usi direttive come #ifdef e #ifndef per: abilitare o disabilitare il calcolo della penale in base a una configurazione.
 Permettere il debug del programma stampando informazioni aggiuntive.
@@ -7,36 +7,58 @@ Offra suggerimenti di risparmio utilizzando uno switch.
 Stampi un riepilogo finale con tutte le informazioni.*/
 
 #include <stdio.h>
-#include <string.h>
 
 #include "compito_04.h"
 
 int main() {
+    //inserting the electricity expense
     printf("Inserire la spesa per l'elettricità: ");
-    double elettricita;
-    scanf("%lf", &elettricita);
+    double electricity;
+    scanf("%lf", &electricity);
 
-    printf("Inserire la spesa per l'acqua: ");
-    double acqua;
-    scanf("%lf", &acqua);
+    //inserting the water expense
+    printf("Inserire la spesa per l'water: ");
+    double water;
+    scanf("%lf", &water);
 
+    //inserting gas expense
+    printf("Inserire la spesa per il gas: ");
+    double gas;
+    scanf("%lf", &gas);
+
+    //inserting the internet expense
     printf("Inserire la spesa per internet: ");
     double internet;
     scanf("%lf", &internet);
 
-    double spesa=elettricita+acqua+internet;
-    double penale1;
+    //calculating the total expense
+    double tot_exp = electricity + water + gas + internet;
 
-    printf("La spesa totale è: %.2lf\n", spesa);
+    //printing the total expense
+    printf("\nLa spesa totale è: %.2lf\n", tot_exp);
 
-    if(spesa>50) {
-    penale1=penale*spesa;
+    //if-else to determin if the total expense is grater than the limit
+    if(tot_exp<exp_limit) {
+        printf("\nLa spesa totale è entro la soglia predefinita.\n");
     }
     else{
-        penale1=0;
+        printf("\nLa spesa totale supera la soglia predefinita.\n\n");
     };
 
-    printf("La penale è: %.2lf\n\n", penale1);
+   //the user inserts if the payment was delayed or not
+   printf("Il pagamento è in ritardo [s/n]; ");
+    char delay[2];
+   scanf("%1s", delay);
+
+   
+   if(!strcmp(delay, "s")) {
+     printf("\nAttenzione: la spesa mensile è stata pagata in ritardo.\n");
+     double penalty= penalty_calc(tot_exp);
+     printf("Penale: %.2lf\n\n", penalty);
+   }
+   else {
+    printf("\nLa spesa mensile è stata pagata entro la data di scadenza.\n\n");
+   }
 
     return 0;
 }
