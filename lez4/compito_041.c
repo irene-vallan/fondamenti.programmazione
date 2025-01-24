@@ -9,7 +9,7 @@ Stampi il totale delle spese con e senza IVA, specificando se il giorno è feria
 #include <string.h> 
 
 // macro that calculate the IVA of the expense
-#define IVA 22*expense/100 
+#define IVA 0.22
 
 int main(){
     //the user inserts the day of the week
@@ -23,12 +23,20 @@ int main(){
     scanf("%lf", &expense);
 
     //printing the total of expense, with and without IVA
-    printf("\nSpesa totale senza IVA: %.2lf", expense); 
-    printf("\nIVA: %.2lf", IVA);
-    printf("\nSpesa totale con IVA: %.2lf", expense+IVA);
+    if(expense<=0){
+        printf("Spesa negativa.\n");
+        return 1;
+    }
+
+    else{
+       double PERC_IVA= IVA*expense;
+       printf("\nSpesa totale senza IVA: %.2lf", expense);
+       printf("\nIVA: %.2lf", PERC_IVA);
+       printf("\nSpesa totale con IVA: %.2lf", expense+PERC_IVA);
+    }
 
     //if-else structure to distinguish weekdays from holidays
-    if(strcmp(day,"domenica")==0) {
+    if(strcmp(day,"domenica")==0 || strcmp(day, "sabato")==0) {
         printf("\n%s è un giorno festivo.\n\n", day);
     }
     else {
