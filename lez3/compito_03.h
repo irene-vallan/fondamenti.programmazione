@@ -3,11 +3,6 @@
 #ifndef _DEFINE_H_
 #define _DEFINE_H_
 
-//including library for standarn input/output
-#include <stdio.h>
-//including library for strings
-#include <string.h>
-
 //macro that prints out name and surname
 #define name printf("Irene Vallan\n\n");
 
