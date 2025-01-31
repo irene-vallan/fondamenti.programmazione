@@ -45,20 +45,58 @@ int main() {
         printf("\nLa spesa totale supera la soglia predefinita.\n\n");
     };
 
-   //the user inserts if the payment was delayed or not
-   printf("Il pagamento è in ritardo [s/n]; ");
-    char delay[2];
-   scanf("%1s", delay);
+    DEBUG_PRINT("calcolo della penale");
 
-   
-   if(!strcmp(delay, "s")) {
-     printf("\nAttenzione: la spesa mensile è stata pagata in ritardo.\n");
-     double penalty= penalty_calc(tot_exp);
-     printf("Penale: %.2lf\n\n", penalty);
-   }
-   else {
-    printf("\nLa spesa mensile è stata pagata entro la data di scadenza.\n\n");
-   }
+#ifdef ABILITA_CALC_PENALE
+
+    // the user inserts if the payment was delayed or not
+    printf("Il pagamento è in ritardo [s/n]; ");
+    char delay[2];
+    scanf("%1s", delay);
+
+    if (!strcmp(delay, "s"))
+    {
+        printf("\nAttenzione: la spesa mensile è stata pagata in ritardo.\n");
+        double penalty = penalty_calc(tot_exp);
+        printf("Penale: %.2lf\n\n", penalty);
+    }
+    else
+    {
+        printf("\nLa spesa mensile è stata pagata entro la data di scadenza.\n\n");
+    }
+
+#endif // ABILITA_CALC_PENALE
+
+    // suggerimento per il risparmio
+    int scelta_corretta = 1;
+    do
+    {
+        printf("Quale spesa vuoi ottimizzare?\n");
+        printf("1. Elettricità\n2. Acqua\n3. Gas\n4. Internet\n\n");
+        int scelta;
+        scanf("%d", &scelta);
+        scelta_corretta=1;
+
+        switch (scelta)
+        {
+        case 1:
+            printf("Suggerimento: utilizza elettrodomestici a basso consumo\n\n");
+            break;
+        case 2:
+            printf("Suggerimento: ripara eventuali perdited'acqua\n\n");
+            break;
+        case 3:
+            printf("Suggerimento: isola meglio le finestre di casa tua\n\n");
+            break;
+        case 4:
+            printf("Suggerimento: cambia wifi\n\n");
+            break;
+        default:
+            scelta_corretta = 0;
+            printf("\nScelta non valida\n\n");
+        }
+    } while (scelta_corretta == 0);
+    
 
     return 0;
 }
