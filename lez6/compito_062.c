@@ -15,6 +15,8 @@
 // Stampi un messaggio se almeno un numero è multiplo di 5 (considerando solo la parte intera del numero).
 
 #include <stdio.h>
+#include <float.h>
+#include <stdbool.h>
 #include "compito_062.h"
 
 int main() {
@@ -25,7 +27,101 @@ int main() {
         {5.5,   9.9,  -13.7}
     };
 
-    
+    float sumP=0;
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<cols; ++j) {
+            float f=matrix[i][j];
+            if(f>=0) {
+                sumP +=f;
+            } 
+        }
+    }
 
+    float sumN=0;
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<cols; ++j) {
+            float f=matrix[i][j];
+            if(f<0) {
+                sumN +=f;
+            } 
+        }
+    }
+
+    printf ("\n--SOMMA VALORI POSITIVI--");
+    printf("\nsomma: %.2f", sumP);
+
+    printf("\n--SOMMA VALORI NEGATIVI--");
+    printf("\nsomma: %.2f", sumN);
+    
+    float max=FLT_MIN_EXP;
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<cols; ++j) {
+            float f=matrix[i][j];
+            if(f>max) {
+                max=f;
+            } 
+        }
+    }
+    printf("\n\nNumero maggiore: %.2f", max);
+
+    float min=FLT_MAX_EXP;
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<cols; ++j) {
+            float f=matrix[i][j];
+            if(f<min) {
+                min=f;
+            } 
+        }
+    }
+    printf("\nNumero minore: %.2f", min);
+
+    int num_pari=0;
+    int num_dis=0;
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<cols; ++j) {
+            int f=matrix[i][j];  //int considera solo la parte intera
+            bool isEven= ((f%2)==0);
+            if(isEven) {
+                num_pari++;
+            } 
+            else {
+                num_dis++;
+            }
+        }
+    }
+    printf("\n\nQuantità di numeri pari: %d", num_pari);
+    printf("\nQuantità di numeri dispari: %d", num_dis);
+
+
+    bool tuttiP=true;
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<cols; ++j) {
+            float f=matrix[i][j];
+            if(f<0) {
+                tuttiP=false;
+                break;
+            } 
+        }
+    }
+    if(tuttiP) {
+        printf("\nTutti i numeri sono positivi!");
+    }
+    
+    bool tuttiN=true;
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<cols; ++j) {
+            float f=matrix[i][j];
+            if(f>=0) {
+                tuttiN=false;
+                break;
+            } 
+        }
+    }
+    if(tuttiN) {
+        printf("\nTutti i numeri sono negativi!");
+    }
+
+
+    printf("\n\n");
     return 0;
 }
