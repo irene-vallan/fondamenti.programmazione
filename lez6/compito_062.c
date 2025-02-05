@@ -18,6 +18,7 @@
 #include <float.h>
 #include <stdbool.h>
 #include "compito_062.h"
+#include "operation.c"
 
 int main() {
     float matrix [rows][cols] = {
@@ -27,7 +28,7 @@ int main() {
         {5.5,   9.9,  -13.7}
     };
 
-    float sumP=0;
+    /*float sumP=0;
     for(int i=0; i<rows; i++) {
         for(int j=0; j<cols; ++j) {
             float f=matrix[i][j];
@@ -35,7 +36,9 @@ int main() {
                 sumP +=f;
             } 
         }
-    }
+    }*/
+
+   float  sumP=sum_positive_number (*matrix, rows, cols);
 
     float sumN=0;
     for(int i=0; i<rows; i++) {
