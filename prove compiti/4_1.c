@@ -24,7 +24,7 @@ int main () {
     else {
         printf("\nLa spesa totale senza iva è: %.2f", exp);
         printf("\nL'iva è': %.2f", tot_iva);
-        printf("La spesa con iva è: %.2f", exp+tot_iva);
+        printf("\nLa spesa con iva è: %.2f", exp+tot_iva);
     }
 
     if(strcmp(day, "domenica")==0) {

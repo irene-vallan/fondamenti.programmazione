@@ -7,6 +7,12 @@
 #define penalty 0.1
 #define abilita_penale
 
-#define acapo printf("\n");
+// Permettere il debug del programma stampando informazioni aggiuntive.
+#define debug
+
+#ifdef debug 
+#define debugPrint(x) printf("debug!\n"); printf("La penale è: %.2f", x);
+
+#endif //debug
 
 #endif //MACRO_H
