@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "macro.h"
+#include "funzioni.h"
 
 int main() {
     int x=0, y=0;
@@ -63,6 +63,15 @@ int main() {
             case 7:
             printf("Test delle operazioni sui numeri {2, 4, 6, 8, 10}\n");
             test_all_operations(numbers, size);
+
+            //test delle operazioni con valori inseriti da tastiera
+            printf("Ora prova tu! Inserire 5 numeri interi: ");
+            int numbers2[5];
+            for( int i=0; i<5; i++) {
+                scanf("%d", &numbers2[i]);
+            }
+            printf("\nTest delle operazioni: ");
+            test_all_operations(numbers2, 5);
             break;
 
             //uscita dal programma

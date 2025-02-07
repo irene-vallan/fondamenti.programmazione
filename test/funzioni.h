@@ -47,4 +47,5 @@ void test_all_operations(int numbers[], int size) {
         printf("%d %% %d = %d\n", a, b, mod(a, b));
         printf("%d ^ %d = %d\n", a, b, power(a, b));
     }
+
 };
