@@ -13,7 +13,7 @@
 // 5. Esci
 // Scegli un'operazione (1-5):
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdbool.h>
 
 #include "operation.h"
@@ -89,4 +89,4 @@ int main(){
 
     printf("\n\n");
     return 0;
-}
+}*/
